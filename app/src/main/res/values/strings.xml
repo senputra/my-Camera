@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">my Camera</string>
+    <string name="ImageButtonContext">Press this to take a picture</string>
+</resources>
