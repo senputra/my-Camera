@@ -22,12 +22,13 @@ public class MainActivity extends AppCompatActivity {
             int numberOfCameras = Camera.getNumberOfCameras();
             Log.d("DEBUG","number of camera " + numberOfCameras);
             mCamera = Camera.open(0);//you can use open(int) to use different cameras
+
         } catch (Exception e){
             Log.d("ERROR", "Failed to get camera: " + e.getMessage());
         }
 
         if(mCamera != null) {
-            mCameraView = new CameraView(this, mCamera);//create a SurfaceView to show camera data
+            mCameraView = new CameraView(this, mCamera);
             FrameLayout camera_view = (FrameLayout)findViewById(R.id.camera_view);
             camera_view.addView(mCameraView);//add the SurfaceView to the layout
         }
@@ -36,6 +37,8 @@ public class MainActivity extends AppCompatActivity {
         Camera.Parameters params = mCamera.getParameters();
         params.setFocusMode(Camera.Parameters.FOCUS_MODE_CONTINUOUS_PICTURE);
         mCamera.setParameters(params);
+
+
 
         //btn to close the application
         ImageButton imgClose = (ImageButton)findViewById(R.id.imgClose);
@@ -46,5 +49,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //mCameraView.run();
     }
 }
