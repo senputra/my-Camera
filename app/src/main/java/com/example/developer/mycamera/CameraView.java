@@ -86,7 +86,7 @@ public class CameraView extends SurfaceView implements SurfaceHolder.Callback, C
 
         params.setPreviewFormat(ImageFormat.NV21);
         mCamera.setParameters(params);
-
+Log.d("image format", "image format : "+params.getPreviewFormat());
         //when the surface is created, we can set the camera to draw images in this surfaceholder
         try {
             mCamera.setPreviewDisplay(surfaceHolder);
@@ -132,7 +132,7 @@ public class CameraView extends SurfaceView implements SurfaceHolder.Callback, C
 
     @Override
     public void onPreviewFrame(byte[] bytes, Camera camera) {
-        Log.d("bytes", "size ; "+ bytes.length);
+        Log.d("bytes", "size ; "+ bytes.length );
 
     }
 }
